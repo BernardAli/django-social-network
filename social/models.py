@@ -27,11 +27,7 @@ class UserProfile(models.Model):
     location = models.CharField(max_length=30, blank=True, null=True)
     picture = models.ImageField(upload_to='uploads/profile_pictures', default='uploads/profile_pictures/default.png',
                                 blank=True)
-
-    # sender - User
-    # receiver - decorator (@receiver)
-    # instance - User object being saved
-    # created - true / false
+    followers = models.ManyToManyField(User, blank=True, related_name='followers')
 
 
 @receiver(post_save, sender=User)
