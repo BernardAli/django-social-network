@@ -20,6 +20,7 @@ urlpatterns = [
     path('search/', views.UserSearch.as_view(), name='profile-search'),
     path('notification/<int:notification_pk>/post/<int:post_pk>', views.PostNotification.as_view(), name='post-notification'),
     path('notification/<int:notification_pk>/profile/<int:profile_pk>', views.FollowNotification.as_view(), name='follow-notification'),
+    path('notification/<int:notification_pk>/thread/<int:object_pk>', views.ThreadNotification.as_view(), name='thread-notification'),
     path('notification/delete/<int:notification_pk>', views.RemoveNotification.as_view(), name='notification-delete'),
     path('inbox/', views.ListThreads.as_view(), name='inbox'),
     path('inbox/create-thread/', views.CreateThread.as_view(), name='create-thread'),
